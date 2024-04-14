@@ -26,6 +26,9 @@ public class Product {
             ))
     private Set<Category> categories = new HashSet<>(); // Deve ser um Set pois não aceita repetições
 
+    @OneToMany(mappedBy = "id.product") // id.product é o atributo product da classe OrderItemPK
+    private Set<OrderItem> items = new HashSet<>();
+
     public Product() {
     }
 
